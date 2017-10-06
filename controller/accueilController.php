@@ -2,8 +2,7 @@
 //========== CONTROLLER ==========
   require "model/accueilModel.php";
 
-  $title = "Acceuil";
-
+  $title = "Accueil";
 
   require "view/accueilView.php"
 ?>
