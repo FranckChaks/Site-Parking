@@ -1,39 +1,38 @@
+<!-- Si ça ne marche pas, remplacer nom et prénom par login-->
 <?php
-    try
-    {
-        $bdd = new PDO ("mysql:host=localhost; dbname=parking", "root", "");
-    }
-    catch(Exception $e)
-    {
-        die  ("Erreur Connexion");
-    }
+    
+    session_start();
+
+    define('WEBROOT', dirname(__FILE__));
+    define('BASE_URL', dirname($_SERVER['SCRIPT_NAME']));
+    define('ROOT', dirname(WEBROOT));
+    define('DS', DIRECTORY_SEPARATOR);
+    define('CORE',ROOT.DS.'core');
+
+    require "content/header2.php";
 
 
-    $req = $bdd->query("SELECT * FROM place WHERE etat = 0");
+    if(!isset($_GET['p']) || $_GET['p'] == "")
+    {
+        $page = 'accueil2'; //Sécurise d'avantage
+    }
+    else
+    {
+        if(!file_exists("content/".$_GET['p'].".php"))
+        {
+            $page = '404';
+        }
+        else $page = $_GET['p'];
+    }
+
+    ob_start();//permet de ne plus renvoyer de contenu au navigateur
+    require "content/".$page.".php";
+
+    $content = ob_get_contents();//permet de recuperer le contenu executer depuis ob_start
+
+	ob_end_clean();
+	require "layout.php";
+
+    require "content/footer.php";
+
 ?>
-<select>
-   <?php
-    while ($res = $req->fetch())
-    {
-        echo "<option value=".$res['id_p'].">".$res['num_p']."</option>";
-    }
-?>
-</select>
-
-
-<?php
-    if (isset($_POST['submit']))
-    {
-
-    }
-?>
-
-<h3>Faites votre demande pour votre place de parking</h3>
-
-
-<form method="post">
-    <label>Nom : </label>
-    <input type="text" name="nom"/>
-
-    <button name="submit">Submit</button>
-</form>
