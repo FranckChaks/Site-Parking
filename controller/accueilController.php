@@ -2,7 +2,13 @@
 //========== CONTROLLER ==========
   require "model/accueilModel.php";
 
-  $title = "Accueil";
+//  $req = login();
+//  if(isset)
+
+
+
+
+
 
   require "view/accueilView.php"
 ?>
