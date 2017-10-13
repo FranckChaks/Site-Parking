@@ -1,13 +1,15 @@
 <?php
 
-    function displayUser($id_u)
+    
+
+    function displayUser()
     {
         global $bdd;
 
         $req = $bdd->prepare("SELECT * FROM user where lvl < 3");
         $req->execute();
         
-        return $req;
+        return $req->fetchAll();
     }
 
     function deleteUser($id_u)
@@ -17,7 +19,7 @@
         $req = $bdd->prepare("DELETE FROM user WHERE id_u =".$id_u);
         $req->execute();
         
-        return $req;
+        return $req->fetch();
     }
 
     function displayPlace($id_p, $id_u)

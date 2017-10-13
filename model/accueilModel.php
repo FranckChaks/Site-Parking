@@ -35,10 +35,6 @@
       $_SESSION['lvl'] = $resultat['lvl'];
       
       $resultat = $req->fetch();
-
-        
-
-      }
-   }
+  }
   
 ?>
