@@ -37,6 +37,7 @@
                         <!----------------------------------------->
                     </div>
                     <div class="modal-footer titre_co">
+                       <?= $message;?>
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
                     </div>
                 </div>
