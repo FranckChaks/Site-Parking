@@ -24,6 +24,10 @@ header{
     font-size: medium;
 }
 
+.color-black{
+    color: black;
+}
+
 .titre{
     background: rgba(52, 54, 85, 0.42);
     margin-top: 38px;

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
   function signIn($nom, $prenom, $email, $mdp, $confirm, $bdd)
   {
@@ -23,21 +22,6 @@
   }
 
 
-  function login($email, $mdp, $bdd)
-  {
-      $req = $bdd -> prepare("SELECT * FROM user WHERE email = :email AND mdp = :mdp");
-      $req->execute(array(
-        'email'=>$email,
-        'mdp'=>sha1($mdp)
-      ));
-        
-      $_SESSION['id'] = $resultat['id_u'];
-      $_SESSION['email'] = $resultat['email'];
-      $_SESSION['lvl'] = $resultat['lvl'];
-      
-      $resultat = $req->fetch();
-  }
+
   
 ?>
-=======
->>>>>>> c6bf4ff2b38fe0bc5a642dff87d32552aa1d8070
