@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
   function signIn($nom, $prenom, $email, $mdp, $confirm, $bdd)
   {
@@ -49,6 +48,3 @@
    }
   
 ?>
-=======
-
->>>>>>> 55c12be859fbd7226d859300fc54eb28a6837c01
