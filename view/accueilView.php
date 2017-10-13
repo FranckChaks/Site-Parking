@@ -26,5 +26,5 @@
     <div class="col-xs-12 col-lg-12 text-center2">
         
             <h1>Ce site est fait pour vous</h1>
-            <br><p> Acceptez l'offre premium pour seulement 1000€/jour !</p> <img class="img_responsive2" width="70%" height="80%" src="css/item2.jpg"> </div>
+        <br><p> Acceptez l'offre premium pour seulement 1000€/jour !</p> <a href="index.php?p=adminController"><img class="img_responsive2" width="70%" height="80%" src="css/item2.jpg"></a> </div>
 </div>

@@ -1,7 +1,9 @@
 <?php
 
-  function login($email, $mdp, $bdd)
+  function login($email, $mdp)
   {
+      global $bdd;
+      
       $req = $bdd -> prepare("SELECT * FROM user WHERE email = :email AND mdp = :mdp");
       $req->execute(array(
         'email'=>$email,
@@ -14,7 +16,7 @@
       
       $resultat = $req->fetch();
 
-        
+      return $resultat;
 
   }
 
