@@ -4,16 +4,14 @@
     <title>Parking</title>
     <link rel="stylesheet" href="css/style2.css" />
     <link rel="stylesheet" href="css/bootstrap.css" />
-    <!--
-	<link rel="stylesheet" href="css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="css/bootstrap.theme.css"/>
--->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <meta charset="utf8" /> </head>
+    <meta charset="utf8" />
+</head>
 
 
     <header>
+    <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12 col-lg-12 entete">
                 <!----------- ENTETE ---------------->
@@ -58,6 +56,7 @@
             </div>
         </div>
         <!----------------------------->
+        
         <!-- Pop-up Inscription-->
         <div class="modal fade" id="myModal2" role="dialog">
             <div class="modal-dialog">
@@ -101,10 +100,12 @@
             </div>
         </div>
         <!----------------------------->
+        </div>
     </header>
     <div class="row">
         <div class="col-xs-12 col-md-12 titre">
             <p class="titre_parking">Parking.yeah</p>
         </div>
     </div>
+    
 <body>

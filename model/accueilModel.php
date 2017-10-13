@@ -30,20 +30,14 @@
         'mdp'=>sha1($mdp)
       ));
         
+      $_SESSION['id'] = $resultat['id_u'];
+      $_SESSION['email'] = $resultat['email'];
+      $_SESSION['lvl'] = $resultat['lvl'];
+      
       $resultat = $req->fetch();
 
-      if (!$resultat)
-      {
-        $error = "<div class =' alert alert-warning error col-lg-3'>Mauvais identifiant ou mot de passe !</div>";
-        return $error;
-      }
-      else
-      {
-        $_SESSION['id'] = $resultat['id_u'];
-        $_SESSION['email'] = $resultat['email'];
-        $_SESSION['lvl'] = $resultat['lvl'];
+        
 
-        header("Location:index.php");
       }
    }
   
