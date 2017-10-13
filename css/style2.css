@@ -161,3 +161,7 @@ footer{
 .text-middle{
     text-align: center;
 }
+
+.href:hover{
+    text-decoration: none;
+}

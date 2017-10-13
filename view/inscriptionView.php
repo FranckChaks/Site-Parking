@@ -10,7 +10,7 @@
                         <h4 class="modal-title titre_co">Inscription à Parking.yeah !</h4> </div>
                     <div class="modal-body">
                         <!--------------FORMULAIRE INSCRIPTION----------------->
-                        <form method="post" action="#">
+                        <form method="post" action="index.php">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Nom</label>
                                 <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nom" name="nom"> </div>
