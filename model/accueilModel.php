@@ -1,5 +1,5 @@
 <?php
-  function signIn($nom, $prenom $email, $mdp, $confirm, $bdd)
+  function signIn($nom, $prenom, $email, $mdp, $confirm, $bdd)
   {
     
           $crypt = sha1($mdp);
@@ -45,6 +45,6 @@
 
         header("Location:index.php");
       }
-    }
-  }
+   }
+  
 ?>

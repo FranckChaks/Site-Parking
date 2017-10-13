@@ -1,6 +1,6 @@
 <?php
   session_start();
-  print_r($_SESSION);
+//  print_r($_SESSION);
 
   require "core/functions.php";
   require "model/bdd.php";
@@ -13,7 +13,7 @@
 
   if(!isset($_GET['p']) || $_GET['p'] == "")
   {
-    $_GET["p"] = 'accueil';
+    $_GET["p"] = 'accueilController';
   }
   else
   {
