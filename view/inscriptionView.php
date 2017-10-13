@@ -3,7 +3,7 @@
                         if(isset($_POST['submit']))
 	                       {
                                if($i>0){
-                                   echo "<div class='error'><section class='error-title'><b>Vous avez ".$i." erreur(s):</b></section><br>";
+                                   echo "<div class='error'><section class='error-title'><b>".$message2."</b></section><br>";
                                    echo "<p class='justify'>".$message."</p></div>";
                                }
                            }

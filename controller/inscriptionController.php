@@ -12,6 +12,7 @@
 			$mdp = $_POST['mdp'];
 			$confirm = $_POST['confirm'];
             $message = "";
+            $message2= "";
         
 			if(empty($nom))
 			{
@@ -44,6 +45,11 @@
 				$i++;
 				$message .="Vos mots de passe ne correspondent pas <br/>";
 			}
+        
+            if($i > 0)
+            {
+                $message2 .="Vous avez ".$i." erreur(s), veuillez remplir correctement tous les champs :";
+            }
 			
 			else{
              $rep = signIn($nom, $prenom, $email, $mdp, $confirm);
@@ -53,7 +59,7 @@
              $_SESSION['nom'] = $nom;
              $_SESSION['prenom'] = $prenom;
              $_SESSION['email'] = $email;
-             $_SESSION['lvl'] = 1;
+             $_SESSION['lvl'] = 1;   
             }
              
             
