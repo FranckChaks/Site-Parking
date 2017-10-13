@@ -1,5 +1,13 @@
  <button type="button" class="bouton" data-toggle="modal" data-target="#myModal2"><span class="glyphicon glyphicon-pencil"></span> Inscription</button>
- 
+                        <?php
+                        if(isset($_POST['submit']))
+	                       {
+                               if($i>0){
+                                   echo "<div class='error'><section class='error-title'><b>Vous avez ".$i." erreur(s):</b></section><br>";
+                                   echo "<p class='justify'>".$message."</p></div>";
+                               }
+                           }
+                        ?>
         <!-- Pop-up Inscription-->
         <div class="modal fade color-black" id="myModal2" role="dialog">
             <div class="modal-dialog">
@@ -10,7 +18,7 @@
                         <h4 class="modal-title titre_co">Inscription à Parking.yeah !</h4> </div>
                     <div class="modal-body">
                         <!--------------FORMULAIRE INSCRIPTION----------------->
-                        <form method="post" action="index.php">
+                        <form method="post" action="#">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Nom</label>
                                 <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nom" name="nom"> </div>
@@ -37,7 +45,7 @@
                         <!----------------------------------------->
                     </div>
                     <div class="modal-footer titre_co">
-                       <?= $message;?>
+
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
                     </div>
                 </div>

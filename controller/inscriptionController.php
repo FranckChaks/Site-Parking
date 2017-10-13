@@ -1,6 +1,7 @@
 <?php 
     require "model/inscriptionModel.php";
-         
+    
+
      
     	if(isset($_POST['submit']))
 	{
@@ -15,27 +16,27 @@
 			if(empty($nom))
 			{
 				$i++;
-				$message .= "Le champ nom est vide <br/>";
+				$message .= "Le champ <b>nom</b> est vide <br/>";
 			}
             if(empty($prenom))
 			{
 				$i++;
-				$message .= "Le champ prenom est vide <br/>";
+				$message .= "Le champ <b>prenom</b> est vide <br/>";
 			}
 			if(empty($email))
 			{
 				$i++;
-				$message .= "Le champ email est vide";
+				$message .= "Le champ <b>email</b> est vide <br/>";
 			}
 			if (empty($mdp))
 			{
 				$i++;
-				$message .="Le champ mdp est vide <br/>";
+				$message .="Le champ <b>mdp</b> est vide <br/>";
 			}
 			if (empty($confirm))
 			{
 				$i++;
-				$message .="Le champ de confirmation de mot de passe est vide <br/>";
+				$message .="Le champ de <b>confirmation de mot de passe</b> est vide <br/>";
 			}
 			
 			if($mdp != $confirm)
@@ -44,11 +45,6 @@
 				$message .="Vos mots de passe ne correspondent pas <br/>";
 			}
 			
-			if($i>0)
-			{
-				echo "Vous avez ".$i." erreur(s)<br/>";
-				echo $message;
-			}
 			else{
              $rep = signIn($nom, $prenom, $email, $mdp, $confirm);
         
@@ -63,4 +59,4 @@
             
 	}
 
-      require "view/inscriptionView.php";?>
+          require "view/inscriptionView.php";?>
