@@ -19,7 +19,7 @@
   {
     if(!file_exists("controller/".$_GET['p'].".php"))
     {
-      $_GET['p'] = '404';
+      $_GET['p'] = '404Controller';
     }
     else
     {

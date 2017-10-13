@@ -148,3 +148,12 @@ footer{
     color: white; 
     background: white;
 }
+
+.notfound{
+    font-size: 200px;
+    text-align: center;
+}
+
+.text-middle{
+    text-align: center;
+}
