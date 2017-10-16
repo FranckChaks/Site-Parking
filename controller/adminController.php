@@ -1,4 +1,5 @@
 <?php
+    //Controller
     require("model/adminModel.php");
     $titre = "Gestion Admin";
     $r = displayUser();
@@ -8,11 +9,9 @@
         deleteUser($_GET['id']);
         header("location: index.php?p=adminController");
     }
+    if (isset($_GET['id_p']))
+    {
+        
+    }
     require("view/adminView.php");
 ?>
-
-
-
-
-
-
