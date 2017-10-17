@@ -15,15 +15,34 @@
         <div class="row">
             <div class="col-xs-12 col-lg-12 entete">
                 <!----------- ENTETE ---------------->
+                
+                    
+                
                 <nav>
                     <ul>
+                <?php 
+                if(isset($_SESSION['connecte']))
+                {
+                ?>
+                        <li class="col-xs-2 col-md-2 liste"><span class="glyphicon glyphicon-user"> </span> Mon compte</li>
+                        <a href="<?=BASE_URL;?>/logout"><li class="col-xs-2 col-md-2 liste"><span class="glyphicon glyphicon-off"> </span> Déconnexion</li></a>
+                <?php 
+                    if($_SESSION['lvl'] == 3)
+                    {
+                ?>      
+                        <a href="<?=BASE_URL;?>/adminController"><li class="col-xs-2 col-md-2 liste"><span class="glyphicon glyphicon-off"> </span> Gestion Admin</li></a> 
+                <?php
+                    }
+                ?>
+                <?php }
+                else { ?>
                         <li class="col-xs-2 col-md-2 liste">
                            <?php require "controller/loginController.php";?>
                         </li>
                         <li class="col-xs-2 col-md-2 liste">
                             <?php require "controller/inscriptionController.php";?>
                         </li>
-                        <li class="col-xs-2 col-md-2 liste"><span class="glyphicon glyphicon-user"> </span> Mon compte</li>
+                     <?php } ?>   
                     </ul>
                 </nav>
             </div>

@@ -14,7 +14,9 @@
             $_SESSION['connecte'] = true;
             $_SESSION['id'] = $reponse['id_u'];
             $_SESSION['email'] = $reponse['email'];
-            $_SESSION['lvl'] = $reponse['lvl'];    
+            $_SESSION['lvl'] = $reponse['lvl']; 
+            
+            header("location:index.php");
         }
         else
         {
