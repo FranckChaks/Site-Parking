@@ -1,6 +1,6 @@
  <button type="button" class="bouton" data-toggle="modal" data-target="#myModal2"><span class="glyphicon glyphicon-pencil"></span> Inscription</button>
                         <?php
-                        if(isset($_POST['submit']))
+                        if(isset($_POST['submit_inscription']))
 	                       {
                                if($i>0){
                                    echo "<div class='error'><section class='error-title'><b>".$message2."</b></section><br>";
@@ -40,7 +40,7 @@
                                         <input type="checkbox" value="remember"> Se souvenir de moi </label>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-success" name="submit">S'inscrire</button>
+                            <button type="submit" class="btn btn-success" name="submit_inscription">S'inscrire</button>
                         </form>
                         <!----------------------------------------->
                     </div>

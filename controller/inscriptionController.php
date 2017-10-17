@@ -3,7 +3,7 @@
     
 
      
-    	if(isset($_POST['submit']))
+    	if(isset($_POST['submit_inscription']))
 	{
 			$i = 0;
 			$nom = $_POST['nom'];
@@ -60,6 +60,8 @@
              $_SESSION['prenom'] = $prenom;
              $_SESSION['email'] = $email;
              $_SESSION['lvl'] = 1;   
+            
+            header("location: index.php");
             }
              
             
