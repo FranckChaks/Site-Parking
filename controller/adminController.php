@@ -1,13 +1,21 @@
 
 <?php
     require("model/adminModel.php");
-    $titre = "Gestion Admin";
-    $r = displayUser();
 
-    if(isset($_GET['id']))
+    if($_SESSION['lvl'] == 3)
     {
-        deleteUser($_GET['id']);
-        header("location: index.php?p=adminController");
+        $titre = "Gestion Admin";
+        $r = displayUser();
+
+        if(isset($_GET['id']))
+        {
+            deleteUser($_GET['id']);
+            header("location:".BASE_URL."/adminController");
+        }
+    }
+    else
+    {
+        header("location: index.php");
     }
     require("view/adminView.php");
 ?>
