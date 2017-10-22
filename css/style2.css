@@ -178,3 +178,22 @@ footer{
 .error-title{
     background: red;
 }
+
+table{
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+    border: 1px solid black;
+    box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7),
+            -1px 2px 20px rgba(255, 255, 255, 0.6) inset; 
+}
+
+th{
+    background: #0076ff;
+    border: 1px solid black;
+}
+
+td{
+    border: 1px solid black;
+}

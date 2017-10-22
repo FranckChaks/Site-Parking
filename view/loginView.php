@@ -1,6 +1,14 @@
 <button type="button" class="bouton" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-off"></span> Connexion</button>
        
-
+<?php
+    if(isset($_POST['submit_login']))
+    {
+        if($i>0)
+        {
+            echo "<div class='error'>".$message."</div>";
+        }
+    }
+?>
 <!-- Pop-up Connexion-->
         <div class="modal fade color-black" id="myModal" role="dialog">
             <div class="modal-dialog">
@@ -18,7 +26,7 @@
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Mot de passe</label>
                                 <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mot de passe" name="mdp"> </div>
-                            <button type="submit" class="btn btn-success" name="submit">Se connecter</button>
+                            <button type="submit" class="btn btn-success" name="submit_login">Se connecter</button>
                         </form>
                         <a href="index.php?p=forgotmdp">Mot de Passe oublier</a>
                         <!----------------------------------------->
