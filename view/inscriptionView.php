@@ -1,5 +1,13 @@
  <button type="button" class="bouton" data-toggle="modal" data-target="#myModal2"><span class="glyphicon glyphicon-pencil"></span> Inscription</button>
- 
+                        <?php
+                        if(isset($_POST['submit']))
+	                       {
+                               if($i>0){
+                                   echo "<div class='error'><section class='error-title'><b>".$message2."</b></section><br>";
+                                   echo "<p class='justify'>".$message."</p></div>";
+                               }
+                           }
+                        ?>
         <!-- Pop-up Inscription-->
         <div class="modal fade color-black" id="myModal2" role="dialog">
             <div class="modal-dialog">
@@ -37,6 +45,7 @@
                         <!----------------------------------------->
                     </div>
                     <div class="modal-footer titre_co">
+
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
                     </div>
                 </div>

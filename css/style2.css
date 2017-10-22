@@ -161,3 +161,20 @@ footer{
 .text-middle{
     text-align: center;
 }
+
+.href:hover{
+    text-decoration: none;
+}
+
+.error{
+    border: 2px solid red;
+    background: #dd8080;
+    color: black;
+    border-radius: 5px;
+    margin-top: 20px;
+    width: 350px;
+}
+
+.error-title{
+    background: red;
+}
