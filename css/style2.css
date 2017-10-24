@@ -196,6 +196,7 @@ th{
 
 td{
     border: 1px solid black;
+    background: white;
 }
 
 .refusee{
@@ -207,9 +208,15 @@ td{
 }
 
 .corps{
-    border: 2px solid grey;
+    border: 1px solid black;
+    margin: 100px;
     margin-top: 20px;
     margin-bottom: 20px;
     border-radius: 10px;
-    background: silver;
+    background: -webkit-linear-gradient( right, silver, grey);
+background:    -moz-linear-gradient( right, silver, #7f8c8d);
+background:     -ms-linear-gradient( right, silver, #7f8c8d);
+background:      -o-linear-gradient( right, silver, #7f8c8d);
+background:         linear-gradient( to left, silver, #7f8c8d);
 }
+

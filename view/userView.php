@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container-full user-back">
 <div class="corps">
     <div class="row">
-        <h2 class='text-middle'>Bonjour [insérer prénom] !</h2>
+        <h2 class='text-middle'><b>Bonjour [insérer prénom] !</b></h2>
 <!-------------------Informations du compte--------------->
         <div class="col-xs-12 col-md-12 text-middle">
             <h3><u>Vos informations</u></h3>
