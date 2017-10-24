@@ -24,7 +24,7 @@
                 if(isset($_SESSION['connecte']))
                 {
                 ?>
-                        <li class="col-xs-2 col-md-2 liste"><span class="glyphicon glyphicon-user"> </span> Mon compte</li>
+                        <a href="<?=BASE_URL;?>/userController"><li class="col-xs-2 col-md-2 liste"><span class="glyphicon glyphicon-user"> </span> Mon compte</li></a>
                         <a href="<?=BASE_URL;?>/logout"><li class="col-xs-2 col-md-2 liste"><span class="glyphicon glyphicon-off"> </span> Déconnexion</li></a>
                 <?php 
                     if($_SESSION['lvl'] == 3)

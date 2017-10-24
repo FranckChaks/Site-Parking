@@ -197,3 +197,19 @@ th{
 td{
     border: 1px solid black;
 }
+
+.refusee{
+    color: red;
+}
+
+.validee{
+    color: green;
+}
+
+.corps{
+    border: 2px solid grey;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background: silver;
+}

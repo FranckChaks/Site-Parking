@@ -21,8 +21,9 @@
 
 <!--- FIN JONATHAN --->
 =======
+
 <div class="container">
-  <h1 class="text-middle"><u>Listes des utilisateurs</u></h1>
+  <h1 class="text-middle"><u>Liste des utilisateurs</u></h1>
    <div class="row col-xs-12 col-md-12">
     <table class="text-middle">
         <th class="text-middle">Nom / Prenom </th>
