@@ -17,7 +17,7 @@
         </div>
         <div class="col-xs-12 col-md-4">
             <div class="bloc_accueil text-center">
-                <a href="<?= BASE_URL;?>/reservation"><img src="css/reserver.png"></a>
+                <a href="<?= BASE_URL;?>/reserverController"><img src="css/reserver.png"></a>
             </div>
         </div>
     </div>
