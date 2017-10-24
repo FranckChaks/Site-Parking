@@ -1,3 +1,26 @@
+<!--- JONATHAN ---->
+<table>
+    <tr>
+        <th>Nom / Prenom </th>
+        <th>Action</th>
+    </tr>
+    
+    <?php
+    foreach($r as $k => $v)
+        {
+            echo "
+                <tr>
+                    <td>".$v['nom']."  ".$v['prenom']."</td>
+                    <td><a href='index.php?p=adminController&id=".$v['id_u']."'>Supprimer</a> / 
+                    <a href='index.php?p=adminController&id_p=".$v['id_u']."'>Définir Place </a> 
+                    </td>
+                </tr>";
+        }
+    ?>
+</table>
+
+<!--- FIN JONATHAN --->
+=======
 <div class="container">
   <h1 class="text-middle"><u>Listes des utilisateurs</u></h1>
    <div class="row col-xs-12 col-md-12">

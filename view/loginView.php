@@ -28,6 +28,7 @@
                                 <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mot de passe" name="mdp"> </div>
                             <button type="submit" class="btn btn-success" name="submit_login">Se connecter</button>
                         </form>
+                        <a href="index.php?p=forgotmdp">Mot de Passe oublier</a>
                         <!----------------------------------------->
                     </div>
                     <div class="modal-footer titre_co">

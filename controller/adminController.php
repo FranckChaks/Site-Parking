@@ -1,5 +1,6 @@
 
 <?php
+    //Controller
     require("model/adminModel.php");
 
     if($_SESSION['lvl'] == 3)
@@ -17,9 +18,9 @@
     {
         header("location: index.php");
     }
+    if (isset($_GET['id_p']))
+    {
+        
+    }
     require("view/adminView.php");
 ?>
-
-
-
-
