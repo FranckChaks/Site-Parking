@@ -33,8 +33,7 @@
                         <a href="<?=BASE_URL;?>/adminController"><li class="col-xs-2 col-md-2 liste"><span class="glyphicon glyphicon-off"> </span> Gestion Admin</li></a> 
                 <?php
                     }
-                ?>
-                <?php }
+                }
                 else { ?>
                         <li class="col-xs-2 col-md-2 liste">
                            <?php require "controller/loginController.php";?>
