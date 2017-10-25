@@ -23,6 +23,35 @@
 =======
 
 <div class="container">
+
+ <div class="row">
+     <div class="col-xs-12 col-md-12 text-middle">
+             <h1><u>Demande de places</u></h1>
+             <table class="text-middle">
+                <th class="text-middle col-xs-3 col-md-3">Utilisateur</th>
+                <th class="text-middle col-xs-3 col-md-3">Numéro de place</th>
+                <th class="text-middle col-xs-3 col-md-3">Date</th>
+                <th class="text-middle col-xs-3 col-md-3">Etat</th>
+                
+                <tr>
+                   <td class="col-xs-3 col-md-3">UserOne</td>
+                    <td class="col-xs-3 col-md-3">Place number 1</td>
+                    <td class="col-xs-3 col-md-3">23/10/2017</td>
+                    <td class="col-xs-3 col-md-3"><b>Accepter / Refuser</b></td>
+                    
+                </tr>
+                
+                <tr>
+                   <td class="col-xs-3 col-md-3">UserTwo</td>
+                    <td class="col-xs-3 col-md-3">Place number 1</td>
+                    <td class="col-xs-3 col-md-3">23/10/2017</td>
+                    <td class="col-xs-3 col-md-3"><b>Accepter / Refuser</b></td>
+                    
+                </tr>
+            </table>
+     </div>
+ </div>
+ 
   <h1 class="text-middle"><u>Liste des utilisateurs</u></h1>
    <div class="row col-xs-12 col-md-12">
     <table class="text-middle">
