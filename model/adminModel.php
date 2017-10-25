@@ -1,7 +1,6 @@
 <?php
 
-    
-
+//liste des Users
     function displayUser()
     {
         global $bdd;
@@ -11,7 +10,7 @@
         
         return $req->fetchAll();
     }
-
+//supprime User
     function deleteUser($id_u)
     {
         global $bdd;
@@ -21,8 +20,8 @@
         
         return $req->fetch();
     }
-
-    function displayPlace($id_p, $id_u)
+//Liste des places
+    function displayAllPlace($id_p, $id_u)
     {
         global $bdd;
         
@@ -31,8 +30,8 @@
         
         return $req;
     }
-
-    function freePlace()
+// Liste place libre
+    function displayFreePlace()
     {
         global $bdd;
         
@@ -41,14 +40,14 @@
         return $req->fetch();
     }
 
-    function setPlace($id)
+// voir la liste d'attente des places pour accepter ou refuser les places
+    function waitList()
     {
         global $bdd;
         
-        $res = freePlace();
+        $req = $bdd->query("SELECT * FROM occuper WHERE lvl = 0");
         
-        $req = $bdd->prepare("INSERT INTO occuper(id_u, id_p, date_deb, date_fin) VALUES (:id, :id_p, :date_deb, :date_fin)");
-        $req->bindValue(":id", $id, PDO::PARAM_INT);
+        return $req->fetch();
     }
 
 ?>
