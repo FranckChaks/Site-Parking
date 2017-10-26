@@ -1,4 +1,5 @@
 <!--- JONATHAN ---->
+<!--
 <table>
     <tr>
         <th>Nom / Prenom </th>
@@ -19,20 +20,21 @@
     ?>
 </table>
 
-<!--- FIN JONATHAN --->
+- FIN JONATHAN -
 =======
+-->
 
 <div class="container">
 
  <div class="row">
      <div class="col-xs-12 col-md-12 text-middle">
              <h1><u>Demande de places</u></h1>
-             <table class="text-middle">
+             <table class="text-middle tableAdmin">
                 <th class="text-middle col-xs-3 col-md-3">Utilisateur</th>
                 <th class="text-middle col-xs-3 col-md-3">Numéro de place</th>
                 <th class="text-middle col-xs-3 col-md-3">Date</th>
                 <th class="text-middle col-xs-3 col-md-3">Etat</th>
-                
+
                 <tr>
                    <td class="col-xs-3 col-md-3"><?=$reponse['nom']." ".$reponse['prenom'] ;?></td>
                     <td class="col-xs-3 col-md-3"><?=$reponse['nom_p'];?></td>
@@ -48,7 +50,7 @@
   <h1 class="text-middle"><u>Liste des utilisateurs</u></h1>
    <div class="row">
    <div class="text-middle  col-xs-12 col-md-12">
-    <table class="text-middle">
+    <table class="text-middle tableAdmin">
         <th class="text-middle">Nom / Prenom </th>
         <th class="text-middle">Email </th>
         <th class="text-middle">  Action </th>
@@ -79,7 +81,8 @@
         <div class="col-xs-12 col-md-12">
             <h1 class="text-middle"><u>Liste des places utilisées</u></h1>
             <?php
-//                while($reponse = displayAllPlace($id_p, $id_u))
+//                $id_u = $_SESSION['id'];
+//                while($reponse = displayAllPlace($id_u))
 //                {
 //                    echo $reponse['nom_p'];
 //                }

@@ -205,6 +205,11 @@ table{
             -1px 2px 20px rgba(255, 255, 255, 0.6) inset; 
 }
 
+.tableAdmin{
+    margin: auto;
+    margin-top: 20px;
+}
+
 th{
     background: #0076ff;
     border: 1px solid black;
