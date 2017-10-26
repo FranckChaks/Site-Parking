@@ -40,7 +40,7 @@
     {
         global $bdd;
 
-        $req = $bdd->prepare("SELECT p.nom_p, o.date_deb FROM place p, user u, occuper o WHERE o.id_p = p.id_p AND o.id_u = u.id_u AND u.id_u = :id_u AND p.etat = 0");
+        $req = $bdd->prepare("SELECT p.nom_p, o.date_deb FROM place p, user u, occuper o WHERE o.id_p = p.id_p AND o.id_u = u.id_u AND u.id_u = :id_u AND o.lvl = 0");
         $req->bindValue("id_u", $id_u, PDO::PARAM_INT);
         $req->execute();
 
@@ -51,7 +51,7 @@
     {
         global $bdd;
 
-        $req = $bdd->prepare("SELECT p.nom_p, o.date_deb FROM place p, user u, occuper o WHERE o.id_p = p.id_p AND o.id_u = u.id_u AND u.id_u = :id_u AND p.etat = 1");
+        $req = $bdd->prepare("SELECT p.nom_p, o.date_deb FROM place p, user u, occuper o WHERE o.id_p = p.id_p AND o.id_u = u.id_u AND u.id_u = :id_u AND o.lvl = 1");
         $req->bindValue("id_u", $id_u, PDO::PARAM_INT);
         $req->execute();
 
@@ -62,7 +62,7 @@
     {
         global $bdd;
 
-        $req = $bdd->prepare("SELECT p.nom_p, o.date_deb FROM place p, user u, occuper o WHERE o.id_p = p.id_p AND o.id_u = u.id_u AND u.id_u = :id_u AND p.etat = 2");
+        $req = $bdd->prepare("SELECT p.nom_p, o.date_deb FROM place p, user u, occuper o WHERE o.id_p = p.id_p AND o.id_u = u.id_u AND u.id_u = :id_u AND o.lvl = 2");
         $req->bindValue("id_u", $id_u, PDO::PARAM_INT);
         $req->execute();
 
