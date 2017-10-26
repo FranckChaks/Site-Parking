@@ -1,19 +1,18 @@
-<div class="container-full user-back">
+<div class="container-full">
 <div class="corps">
     <div class="row">
         <h2 class='text-middle'><b>Bonjour [insérer prénom] !</b></h2>
-
-<!-------------------RESERVATION DE PLACES---------------->
-    <div class="row">
-        <div class="col-xs-12 col-md-12">
-            <section class="text-middle">
-                <h3><u>Reserver votre place</u></h3>
-            </section>
-        </div>
+        <h4><p class="text-middle col-xs-12 col-md-12">Bienvenue sur votre espace personnel, d'ici vous pourrez réserver vos places de parking, consulter votre place dans la file d'attente, votre historique de places et changer vos informations personnelles.</p></h4>
     </div>
+<!-------------------RESERVATION DE PLACES---------------->
+
     
     <div class="row text-middle">
-        <div class="col-xs-12 col-md-12">
+        <div class="col-xs-12 col-md-5 text-middle">
+           <div class="user-block">
+            <section>
+                <h3><u>Reserver votre place</u></h3>
+            </section>
         <h4>
             Choisissez la date de début:<br>
             <input type="date" name="date_deb" class="text-middle"><br><br>
@@ -22,11 +21,12 @@
             <input type="submit" name="submit">
         </h4>
         </div>
-    </div>
-    
+        </div>
+
 <!--------------------DEMANDE DE PLACES------------------->
-       <div class="row">
-        <div class="col-xs-12 col-md-12 text-middle">
+
+        <div class="col-xs-12 col-md-5 text-middle margin-right">
+           <div class="user-block">
             <h3><u>Demande de places</u></h3>
             <table class="text-middle">
                 <th class="text-middle col-xs-4 col-md-4">Numéro de place</th>
@@ -39,13 +39,22 @@
                     <td class="col-xs-4 col-md-4"><b>En attente...</b></td>
                 </tr>
                 
+                <tr>
+                    <td class="col-xs-4 col-md-4">Place number 3</td>
+                    <td class="col-xs-4 col-md-4">26/10/2017</td>
+                    <td class="col-xs-4 col-md-4"><b>En attente...</b></td>
+                </tr>
+                
+                
             </table>
             <section><h4><b>Place dans la file d'attente:</b> ...</h4></section>
         </div>
+        </div>
     </div>
 <!------------------HISTORIQUE DES PLACES------------->
-       <div class="row">
-        <div class="col-xs-12 col-md-12 text-middle">
+    <div class="row text-middle">
+        <div class="col-xs-12 col-md-5 text-middle">
+           <div class="user-block">
             <h3><u>Historique de vos places</u></h3>
                <table class="text-middle">
                 <th class="text-middle col-xs-4 col-md-4">Numéro de place</th>
@@ -67,7 +76,9 @@
         </div>
        </div>
 <!-------------------Informations du compte--------------->
-        <div class="col-xs-12 col-md-12 text-middle">
+
+           <div class="col-xs-12 col-md-5 text-middle">
+               <div class="user-block">
             <h3><u>Vos informations</u></h3>
             <b>Votre email :</b> [insérer email]<br>
             <b>Votre nom/prénom :</b> [insérer nom] [insérer prénom]<br>
@@ -75,6 +86,7 @@
             <u><b>Changer de mot de passe</b></u>
             <br><br>
         </div>
+    </div>
     </div>
 </div>
 </div>
