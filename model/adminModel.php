@@ -7,17 +7,17 @@
 
         $req = $bdd->prepare("SELECT * FROM user where lvl < 3");
         $req->execute();
-        
+
         return $req->fetchAll();
     }
 //supprime User
     function deleteUser($id_u)
     {
         global $bdd;
-        
+
         $req = $bdd->prepare("DELETE FROM user WHERE id_u =".$id_u);
         $req->execute();
-        
+
         return $req->fetch();
     }
 
@@ -25,31 +25,54 @@
     function banUser($id)
     {
         global $bdd;
-        
+
         $req = $bdd->prepare("UPDATE user SET lvl = 0 WHERE id_u = :id");
         $req->bindValue(":id", $id, PDO::PARAM_INT);
         $req->execute();
-        
+
         return $req->fetch();
-        
+
     }
 //Liste des places
-    function displayAllPlace($id_p, $id_u)
+    function displayPlaceAttente($id_u)
     {
         global $bdd;
-        
-        $req = $bdd->prepare("SELECT p.nom_p FROM place p, user u, occuper o WHERE o.id_p = p.id_p AND o.id_u = u.id_u AND u.id_u=".$id_u);
+
+        $req = $bdd->prepare("SELECT p.nom_p, o.date_deb FROM place p, user u, occuper o WHERE o.id_p = p.id_p AND o.id_u = u.id_u AND u.id_u = :id_u AND p.etat = 0");
+        $req->bindValue("id_u", $id_u, PDO::PARAM_INT);
         $req->execute();
-        
+
+        return $req->fetch();
+    }
+
+    function displayPlaceValide($id_u)
+    {
+        global $bdd;
+
+        $req = $bdd->prepare("SELECT p.nom_p, o.date_deb FROM place p, user u, occuper o WHERE o.id_p = p.id_p AND o.id_u = u.id_u AND u.id_u = :id_u AND p.etat = 1");
+        $req->bindValue("id_u", $id_u, PDO::PARAM_INT);
+        $req->execute();
+
+        return $req->fetch();
+    }
+
+    function displayPlaceDeny($id_u)
+    {
+        global $bdd;
+
+        $req = $bdd->prepare("SELECT p.nom_p, o.date_deb FROM place p, user u, occuper o WHERE o.id_p = p.id_p AND o.id_u = u.id_u AND u.id_u = :id_u AND p.etat = 2");
+        $req->bindValue("id_u", $id_u, PDO::PARAM_INT);
+        $req->execute();
+
         return $req->fetch();
     }
 // Liste place libre
     function displayFreePlace()
     {
         global $bdd;
-        
+
         $req = $bdd->query("SELECT MIN(p.id_p) FROM place p WHERE p.id_p NOT IN (SELECT o.id_p FROM occuper o)");
-        
+
         return $req->fetch();
     }
 
@@ -57,43 +80,43 @@
     function waitList()
     {
         global $bdd;
-        
+
         $req = $bdd->query("SELECT u.nom, u.prenom, p.nom_p, o.date_deb FROM occuper o, user u, place p WHERE o.lvl = 0");
-        
+
         return $req->fetch();
     }
 // Accepter la place
     function acceptPlace($id_p)
     {
         global $bdd;
-        
+
         $req = $bdd->prepare("UPDATE occuper SET lvl = 1 WHERE id_p = :id_p");
         $req->bindValue(":id_p", $id_p,  PDO::PARAM_INT);
         $req->execute();
-        
+
         return $req->fetch();
     }
 // Refuser La place
     function denyPlace($id_p)
     {
         global $bdd;
-        
+
         $req = $bdd->prepare("UPDATE occuper SET lvl = 2 WHERE id_p = :id_p");
         $req->bindValue(":id_p", $id_p, PDO::PARAM_INT);
         $req->execute();
-        
+
         return $req->fetch();
     }
 
     function addPlace($nom_p)
     {
         global $bdd;
-        
+
         $req = $bdd->prepare("INSERT INTO place(nom_p) VALUES (:nom_p)");
-        
+
         $req->bindValue(":nom_p", $nom_p,PDO::PARAM_STR);
         $req->execute();
-        
+
         return $req->fetch();
     }
 
