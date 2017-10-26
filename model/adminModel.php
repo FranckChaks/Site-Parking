@@ -41,7 +41,7 @@
         $req = $bdd->prepare("SELECT p.nom_p FROM place p, user u, occuper o WHERE o.id_p = p.id_p AND o.id_u = u.id_u AND u.id_u=".$id_u);
         $req->execute();
         
-        return $req;
+        return $req->fetch();
     }
 // Liste place libre
     function displayFreePlace()
@@ -58,7 +58,7 @@
     {
         global $bdd;
         
-        $req = $bdd->query("SELECT * FROM occuper WHERE lvl = 0");
+        $req = $bdd->query("SELECT u.nom, u.prenom, p.nom_p, o.date_deb FROM occuper o, user u, place p WHERE o.lvl = 0");
         
         return $req->fetch();
     }
@@ -84,4 +84,31 @@
         
         return $req->fetch();
     }
+
+    function addPlace($nom_p)
+    {
+        global $bdd;
+        
+        $req = $bdd->prepare("INSERT INTO place(nom_p) VALUES (:nom_p)");
+        
+        $req->bindValue(":nom_p", $nom_p,PDO::PARAM_STR);
+        $req->execute();
+        
+        return $req->fetch();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ?>

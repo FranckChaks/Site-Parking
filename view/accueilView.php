@@ -17,7 +17,7 @@
         </div>
         <div class="col-xs-12 col-md-4">
             <div class="bloc_accueil text-center">
-                <a href="<?= BASE_URL;?>/userController"><img src="css/reserver.png"></a>
+                <a href="index.php?p=userController&id=<?=$reponse['id_u'];?>"><img src="css/reserver.png"></a>
             </div>
         </div>
     </div>

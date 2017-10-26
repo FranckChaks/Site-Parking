@@ -21,8 +21,18 @@
     // Bannir User
     if (isset($_GET['id_p']))
     {
-        banUser($_GET['id_p']);
+         banUser($_GET['id_p']);
         header("location:".BASE_URL."/adminController");
     }
+
+    if(isset($_POST['submit']))
+    {
+        $nom_p = $_POST['nom_p'];
+        addPlace($nom_p);
+        header("location:".BASE_URL."/adminController");
+    }
+    
+    $reponse = waitList();
+    
     require("view/adminView.php");
 ?>

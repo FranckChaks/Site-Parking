@@ -12,9 +12,6 @@
           $req->bindValue(':mdp', $crypt, PDO::PARAM_STR);
           $req->execute();
 
-
-          
-      
           return $req;
 
   }

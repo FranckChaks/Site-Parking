@@ -34,26 +34,20 @@
                 <th class="text-middle col-xs-3 col-md-3">Etat</th>
                 
                 <tr>
-                   <td class="col-xs-3 col-md-3">UserOne</td>
-                    <td class="col-xs-3 col-md-3">Place number 1</td>
-                    <td class="col-xs-3 col-md-3">23/10/2017</td>
+                   <td class="col-xs-3 col-md-3"><?=$reponse['nom']." ".$reponse['prenom'] ;?></td>
+                    <td class="col-xs-3 col-md-3"><?=$reponse['nom_p'];?></td>
+                    <td class="col-xs-3 col-md-3"><?=$reponse['date_deb'];?></td>
                     <td class="col-xs-3 col-md-3"><b>Accepter / Refuser</b></td>
                     
                 </tr>
-                
-                <tr>
-                   <td class="col-xs-3 col-md-3">UserTwo</td>
-                    <td class="col-xs-3 col-md-3">Place number 1</td>
-                    <td class="col-xs-3 col-md-3">23/10/2017</td>
-                    <td class="col-xs-3 col-md-3"><b>Accepter / Refuser</b></td>
-                    
-                </tr>
+
             </table>
      </div>
  </div>
  
   <h1 class="text-middle"><u>Liste des utilisateurs</u></h1>
-   <div class="row col-xs-12 col-md-12">
+   <div class="row">
+   <div class="text-middle  col-xs-12 col-md-12">
     <table class="text-middle">
         <th class="text-middle">Nom / Prenom </th>
         <th class="text-middle">Email </th>
@@ -78,5 +72,32 @@
             }
         ?>
     </table>
+    </div>
+    </div>
+    <div class="row">
+        
+        <div class="col-xs-12 col-md-12">
+            <h1 class="text-middle"><u>Liste des places utilisées</u></h1>
+            <?php
+//                while($reponse = displayAllPlace($id_p, $id_u))
+//                {
+//                    echo $reponse['nom_p'];
+//                }
+            ?>
+        </div>
+        
+    </div>
+    
+    <div class="row">
+        
+        <div class="col-xs-12 col-md-12">
+            <h1 class="text-middle"><u>Ajouter une place</u></h1>
+            <form action="" method="post" class="text-middle">
+                <label for="nom">Nom de la place: </label>
+                <input type="text" name="nom_p">
+                <input type="submit" name="submit">
+            </form>
+        </div>
+        
     </div>
 </div>
