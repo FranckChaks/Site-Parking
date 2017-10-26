@@ -72,30 +72,34 @@
                 <th class="text-middle col-xs-4 col-md-4">Numéro de place</th>
                 <th class="text-middle col-xs-4 col-md-4">Date</th>
                 <th class="text-middle col-xs-4 col-md-4">Etat</th>
-              <tr>
+              
                 <?php
                   while($rep1 = $req1->fetch())
                   {
                 ?>
+                <tr>
                 <td class="col-xs-4 col-md-4"><?php echo $rep1['nom_p']; ?></td>
                 <td class="col-xs-4 col-md-4"><?php echo $rep1['date_deb']; ?></td>
                 <td class="col-xs-4 col-md-4 validee"><b>Validée</b></td>
+                </tr>
                 <?php
                   }
                 ?>
-              </tr>
-              <tr>
+              
+              
                 <?php
                   while($rep2 = $req2->fetch())
                   {
                 ?>
+                <tr>
                 <td class="col-xs-4 col-md-4"><?php echo $rep2['nom_p']; ?></td>
                 <td class="col-xs-4 col-md-4"><?php echo $rep2['date_deb']; ?></td>
                 <td class="col-xs-4 col-md-4 refusee"><b>Refusée</b></td>
+                </tr>
                 <?php
                   }
                 ?>
-              </tr>
+              
             </table>
         </div>
        </div>
