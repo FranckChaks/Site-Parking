@@ -37,21 +37,22 @@
            <div class="user-block">
             <h3><u>Demande de places</u></h3>
             <table class="text-middle">
-              <?php
-                while($rep = $req)
-                {
-              ?>
                 <th class="text-middle col-xs-4 col-md-4">Numéro de place</th>
                 <th class="text-middle col-xs-4 col-md-4">Date</th>
                 <th class="text-middle col-xs-4 col-md-4">Etat</th>
               <?php
-                }
+                while($rep = $req)
+                {
               ?>
               <tr>
                 <td class="col-xs-4 col-md-4"><?php echo $rep['nom_p']; ?></td>
                 <td class="col-xs-4 col-md-4"><?php echo $rep['date_deb']; ?></td>
                 <td class="col-xs-4 col-md-4"><b>En attente...</b></td>
               </tr>
+              <?php
+                }
+              ?>
+
             </table>
             <section><h4><b>Place dans la file d'attente:</b> ...</h4></section>
         </div>

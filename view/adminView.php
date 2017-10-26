@@ -39,7 +39,7 @@
                    <td class="col-xs-3 col-md-3"><?=$reponse['nom']." ".$reponse['prenom'] ;?></td>
                     <td class="col-xs-3 col-md-3"><?=$reponse['nom_p'];?></td>
                     <td class="col-xs-3 col-md-3"><?=$reponse['date_deb'];?></td>
-                    <td class="col-xs-3 col-md-3"><b><a href="<?=BASE_URL;?>/accepter">Accepter</a> / Refuser</b></td>
+                    <td class="col-xs-3 col-md-3"><b><a href="<?=BASE_URL;?>/accepter/">Accepter</a> / Refuser</b></td>
                     
                 </tr>
 

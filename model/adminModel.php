@@ -33,39 +33,8 @@
         return $req->fetch();
 
     }
-//Liste des places
-    function displayPlaceAttente($id_u)
-    {
-        global $bdd;
 
-        $req = $bdd->prepare("SELECT p.nom_p, o.date_deb FROM place p, user u, occuper o WHERE o.id_p = p.id_p AND o.id_u = u.id_u AND u.id_u = :id_u AND p.etat = 0");
-        $req->bindValue("id_u", $id_u, PDO::PARAM_INT);
-        $req->execute();
 
-        return $req->fetch();
-    }
-
-    function displayPlaceValide($id_u)
-    {
-        global $bdd;
-
-        $req = $bdd->prepare("SELECT p.nom_p, o.date_deb FROM place p, user u, occuper o WHERE o.id_p = p.id_p AND o.id_u = u.id_u AND u.id_u = :id_u AND p.etat = 1");
-        $req->bindValue("id_u", $id_u, PDO::PARAM_INT);
-        $req->execute();
-
-        return $req->fetch();
-    }
-
-    function displayPlaceDeny($id_u)
-    {
-        global $bdd;
-
-        $req = $bdd->prepare("SELECT p.nom_p, o.date_deb FROM place p, user u, occuper o WHERE o.id_p = p.id_p AND o.id_u = u.id_u AND u.id_u = :id_u AND p.etat = 2");
-        $req->bindValue("id_u", $id_u, PDO::PARAM_INT);
-        $req->execute();
-
-        return $req->fetch();
-    }
 // Liste place libre
     function displayFreePlace()
     {
