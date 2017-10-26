@@ -27,7 +27,7 @@
           </div>
         </div>
 
-<!-- ------------------ DEMANDE DE PLACES ----------------- -->
+<!-- ------------------ DEMANDE DE PLACES ---------------- -->
 
         <?php
           $req = displayPlaceAttente($_SESSION['id']);
@@ -41,7 +41,7 @@
                 <th class="text-middle col-xs-4 col-md-4">Date</th>
                 <th class="text-middle col-xs-4 col-md-4">Etat</th>
               <?php
-                while($rep = $req)
+                while($rep = $req->fetch())
                 {
               ?>
               <tr>
@@ -75,7 +75,7 @@
                 <th class="text-middle col-xs-4 col-md-4">Etat</th>
               <tr>
                 <?php
-                  while($rep1 = $req1)
+                  while($rep1 = $req1->fetch())
                   {
                 ?>
                 <td class="col-xs-4 col-md-4"><?php echo $rep1['nom_p']; ?></td>
@@ -87,7 +87,7 @@
               </tr>
               <tr>
                 <?php
-                  while($rep2 = $req2)
+                  while($rep2 = $req2->fetch())
                   {
                 ?>
                 <td class="col-xs-4 col-md-4"><?php echo $rep2['nom_p']; ?></td>
@@ -100,7 +100,7 @@
             </table>
         </div>
        </div>
-<!-------------------Informations du compte--------------->
+<!-- ---------------- Informations du compte ------------ -->
 
            <div class="col-xs-12 col-md-5 text-middle">
                <div class="user-block">
