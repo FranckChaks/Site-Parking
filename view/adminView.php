@@ -65,7 +65,7 @@
                         </td>
                         <td class='col-xs-4 col-md-4'>
                             <a href="<?=BASE_URL;?>/adminController/<?=$v['id_u'];?>">Supprimer</a>
-                            / <a href="<?=BASE_URL;?>/adminController<?=$v['id_u'];?>">Bannir</a>
+                            / <a href="<?=BASE_URL;?>/adminController/<?=$v['id_u'];?>">Bannir</a>
                         </td>
                     </tr>
         <?php

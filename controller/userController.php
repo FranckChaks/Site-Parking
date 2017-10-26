@@ -3,6 +3,9 @@
 <?php
 
     require "model/userModel.php";
+if(isset($_SESSION['connecte']))
+{
+    
 
     $id_u = $_SESSION['id'];
 
@@ -22,7 +25,11 @@
         
         header("location:index.php?p=userController&id=".$id_u);
     }
-
+}
+else
+{
+    header("location:index.php");
+}
     require "view/userView.php";
 
 ?>
