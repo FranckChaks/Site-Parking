@@ -20,6 +20,19 @@
         
         return $req->fetch();
     }
+
+// Bannir user
+    function banUser($id)
+    {
+        global $bdd;
+        
+        $req = $bdd->prepare("UPDATE user SET lvl = 0 WHERE id_u = :id");
+        $req->bindValue(":id", $id, PDO::PARAM_INT);
+        $req->execute();
+        
+        return $req->fetch();
+        
+    }
 //Liste des places
     function displayAllPlace($id_p, $id_u)
     {
@@ -49,5 +62,26 @@
         
         return $req->fetch();
     }
-
+// Accepter la place
+    function acceptPlace($id_p)
+    {
+        global $bdd;
+        
+        $req = $bdd->prepare("UPDATE occuper SET lvl = 1 WHERE id_p = :id_p");
+        $req->bindValue(":id_p", $id_p,  PDO::PARAM_INT);
+        $req->execute();
+        
+        return $req->fetch();
+    }
+// Refuser La place
+    function denyPlace($id_p)
+    {
+        global $bdd;
+        
+        $req = $bdd->prepare("UPDATE occuper SET lvl = 2 WHERE id_p = :id_p");
+        $req->bindValue(":id_p", $id_p, PDO::PARAM_INT);
+        $req->execute();
+        
+        return $req->fetch();
+    }
 ?>
