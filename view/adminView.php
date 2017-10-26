@@ -34,15 +34,15 @@
                 <th class="text-middle col-xs-3 col-md-3">Numéro de place</th>
                 <th class="text-middle col-xs-3 col-md-3">Date</th>
                 <th class="text-middle col-xs-3 col-md-3">Etat</th>
-
+    <?php if($reponse['lvl'] = 0){ ?>
                 <tr>
                    <td class="col-xs-3 col-md-3"><?=$reponse['nom']." ".$reponse['prenom'] ;?></td>
                     <td class="col-xs-3 col-md-3"><?=$reponse['nom_p'];?></td>
                     <td class="col-xs-3 col-md-3"><?=$reponse['date_deb'];?></td>
-                    <td class="col-xs-3 col-md-3"><b><a href="<?=BASE_URL;?>/accepter/">Accepter</a> / Refuser</b></td>
+                    <td class="col-xs-3 col-md-3"><b><a href="<?=BASE_URL;?>/accepter/<?= $reponse['id_p'];?>">Accepter</a> / Refuser</b></td>
                     
                 </tr>
-
+        <?php } ;?>
             </table>
      </div>
  </div>
