@@ -6,9 +6,9 @@
         </h2>
         <h4><p class="text-middle col-xs-12 col-md-12">Bienvenue sur votre espace personnel, d'ici vous pourrez réserver vos places de parking, consulter l'état de votre demande de réservation, votre historique de places et changer vos informations personnelles.</p></h4>
     </div>
-<!-------------------RESERVATION DE PLACES---------------->
+<!-- ---------------- RESERVATION DE PLACES -------------- -->
 
-    
+
     <div class="row text-middle">
         <div class="col-xs-12 col-md-5 text-middle">
            <div class="user-block">
@@ -16,48 +16,54 @@
                 <h3><u>Réserver votre place</u></h3>
             </section>
         <h4>
-        <form action="#" method="post">
+          <form action="#" method="post">
             Choisissez la date de début:<br>
             <input type="date" name="deb" class="text-middle"><br><br>
             Choisissez la date de fin:<br>
             <input type="date" name="fin" class="text-middle"><br><br>
             <input type="submit" name="submit">
-        </form>
+          </form>
         </h4>
-        </div>
+          </div>
         </div>
 
-<!--------------------DEMANDE DE PLACES------------------->
+<!-- ------------------ DEMANDE DE PLACES ----------------- -->
+
+        <?php
+          $req = displayPlaceAttente($_SESSION['id']);
+        ?>
 
         <div class="col-xs-12 col-md-5 text-middle margin-right">
            <div class="user-block">
             <h3><u>Demande de places</u></h3>
             <table class="text-middle">
+              <?php
+                while($rep = $req)
+                {
+              ?>
                 <th class="text-middle col-xs-4 col-md-4">Numéro de place</th>
                 <th class="text-middle col-xs-4 col-md-4">Date</th>
                 <th class="text-middle col-xs-4 col-md-4">Etat</th>
-                
-                <?php
-                
-                    if($reponse['lvl'] == 0)
-                    {
-                ?>
-                <tr>
-                    <td class="col-xs-4 col-md-4"><?= $reponse['nom_p'];?></td>
-                    <td class="col-xs-4 col-md-4"><?= $reponse['date_deb'];?></td>
-                    <td class="col-xs-4 col-md-4"><b>En attente...</b></td>
-                </tr>
-                <?php
-                    }
-                ?>
-                
-                
+              <?php
+                }
+              ?>
+              <tr>
+                <td class="col-xs-4 col-md-4"><?php echo $rep['nom_p']; ?></td>
+                <td class="col-xs-4 col-md-4"><?php echo $rep['date_deb']; ?></td>
+                <td class="col-xs-4 col-md-4"><b>En attente...</b></td>
+              </tr>
             </table>
             <section><h4><b>Place dans la file d'attente:</b> ...</h4></section>
         </div>
         </div>
     </div>
-<!------------------HISTORIQUE DES PLACES------------->
+<!-- ---------------- HISTORIQUE DES PLACES ---------- -->
+
+    <?php
+      $req1 = displayPlaceValide($_SESSION['id']);
+      $req2 = displayPlaceDeny($_SESSION['id']);
+    ?>
+
     <div class="row text-middle">
         <div class="col-xs-12 col-md-5 text-middle">
            <div class="user-block">
@@ -66,50 +72,30 @@
                 <th class="text-middle col-xs-4 col-md-4">Numéro de place</th>
                 <th class="text-middle col-xs-4 col-md-4">Date</th>
                 <th class="text-middle col-xs-4 col-md-4">Etat</th>
-                
-<!--
-                <tr>
-                    <td class="col-xs-4 col-md-4">Place number 1</td>
-                    <td class="col-xs-4 col-md-4">23/10/2017</td>
-                    <td class="validee col-xs-4 col-md-4">Validée !</td>
-                </tr>
--->
+              <tr>
                 <?php
-
-                    if($reponse['lvl'] == 1)
-                    {
-                        var_dump($reponse);
+                  while($rep1 = $req1)
+                  {
                 ?>
-                <tr>
-                    <td class="col-xs-4 col-md-4"><?= $reponse['nom_p'];?></td>
-                    <td class="col-xs-4 col-md-4"><?= $reponse['date_deb'];?></td>
-                    <td class="col-xs-4 col-md-4 validee"><b>Validée</b></td>
-                </tr>
+                <td class="col-xs-4 col-md-4"><?php echo $rep1['nom_p']; ?></td>
+                <td class="col-xs-4 col-md-4"><?php echo $rep1['date_deb']; ?></td>
+                <td class="col-xs-4 col-md-4 validee"><b>Validée</b></td>
                 <?php
-                    }
+                  }
                 ?>
-                
+              </tr>
+              <tr>
                 <?php
-
-                    if($reponse['lvl'] == 2)
-                    {
+                  while($rep2 = $req2)
+                  {
                 ?>
-                <tr>
-                    <td class="col-xs-4 col-md-4"><?= $reponse['nom_p'];?></td>
-                    <td class="col-xs-4 col-md-4"><?= $reponse['date_deb'];?></td>
-                    <td class="col-xs-4 col-md-4 refusee"><b>Refusée</b></td>
-                </tr>
+                <td class="col-xs-4 col-md-4"><?php echo $rep2['nom_p']; ?></td>
+                <td class="col-xs-4 col-md-4"><?php echo $rep2['date_deb']; ?></td>
+                <td class="col-xs-4 col-md-4 refusee"><b>Refusée</b></td>
                 <?php
-                    }
+                  }
                 ?>
-                
-<!--
-                <tr>
-                    <td class="col-xs-4 col-md-4">Place number 2</td>
-                    <td class="col-xs-4 col-md-4">24/10/2017</td>
-                    <td class="refusee col-xs-4 col-md-4">Refusée !</td>
-                </tr>
--->
+              </tr>
             </table>
         </div>
        </div>
