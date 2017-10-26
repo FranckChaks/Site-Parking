@@ -13,11 +13,15 @@
     <br>
     <div class="row">
         <div class="col-xs-12 col-md-8 text-intro">
-            <p> Pourquoi vous devriez choisir Parking.yeah ? Parce que nous sommes les meilleurs ! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam quos esse, sunt veritatis eos, tempora delectus omnis amet exercitationem incidunt aliquam similique aut ducimus consequuntur temporibus culpa magni natus deleniti.Pourquoi vous devriez choisir Parking.yeah ? Parce que nous sommes les meilleurs ! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam quos esse, sunt veritatis eos, tempora delectus omnis amet exercitationem incidunt aliquam similique aut ducimus consequuntur temporibus culpa magni natus deleniti.</p>
+            <p> Pourquoi vous devriez choisir Parking.yeah ? Parce que nous sommes les meilleurs ! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam quos esse, sunt veritatis eos, tempora delectus omnis amet exercitationem incidunt aliquam similique aut ducimus consequuntur temporibus culpa magni natus deleniti.Pourquoi vous devriez choisir Parking.yeah ? Parce que nous sommes les meilleurs ! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam quos esse, sunt veritatis eos, tempora delectus omnis amet exercitationem incidunt aliquam similique aut ducimus consequuntur temporibus culpa magni natus deleniti.<br> 
+            <b>Pour accéder aux réservations de places, veuillez vous connecter.</b></p>
         </div>
         <div class="col-xs-12 col-md-4">
             <div class="bloc_accueil text-center">
-                <a href="index.php?p=userController&id=<?=$reponse['id_u'];?>"><img src="css/reserver.png"></a>
+               <?php
+                    if(isset($_SESSION['connecte'])){
+                ?>
+                <a href="index.php?p=userController&id=<?=$reponse['id_u'];}?>"><img src="css/reserver.png"></a>
             </div>
         </div>
     </div>
