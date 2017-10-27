@@ -32,7 +32,7 @@
         header("location:".BASE_URL."/adminController");
     }
     
-    $reponse = waitList();
+    $req = waitList();
     
     require("view/adminView.php");
 ?>

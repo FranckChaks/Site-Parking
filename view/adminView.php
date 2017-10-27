@@ -34,15 +34,18 @@
                 <th class="text-middle col-xs-3 col-md-3">Numéro de place</th>
                 <th class="text-middle col-xs-3 col-md-3">Date</th>
                 <th class="text-middle col-xs-3 col-md-3">Etat</th>
-    <?php if($reponse['lvl'] = 0){ ?>
+                
+    <?php
+                 while($reponse = $req->fetch()){
+               ?>
                 <tr>
                    <td class="col-xs-3 col-md-3"><?=$reponse['nom']." ".$reponse['prenom'] ;?></td>
                     <td class="col-xs-3 col-md-3"><?=$reponse['nom_p'];?></td>
                     <td class="col-xs-3 col-md-3"><?=$reponse['date_deb'];?></td>
-                    <td class="col-xs-3 col-md-3"><b><a href="<?=BASE_URL;?>/accepter/<?= $reponse['id_p'];?>">Accepter</a> / Refuser</b></td>
+                    <td class="col-xs-3 col-md-3"><b><a href="<?=BASE_URL;?>/accepter/<?= $reponse['id_p'];?>">Accepter</a> / <a href="<?=BASE_URL;?>/refuser/<?= $reponse['id_p'];?>">Refuser</a></b></td>
                     
                 </tr>
-        <?php } ;?>
+        <?php };?>
             </table>
      </div>
  </div>
@@ -67,7 +70,10 @@
                         </td>
                         <td class='col-xs-4 col-md-4'>
                             <a href="<?=BASE_URL;?>/adminController/<?=$v['id_u'];?>">Supprimer</a>
-                            / <a href="<?=BASE_URL;?>/adminController/<?=$v['id_u'];?>">Bannir</a>
+<!--
+                            / 
+                            <a href="<?=BASE_URL;?>/adminController/<?=$v['id_u'];?>">Bannir</a>
+-->
                         </td>
                     </tr>
         <?php
@@ -76,6 +82,7 @@
     </table>
     </div>
     </div>
+<!--
     <div class="row">
         
         <div class="col-xs-12 col-md-12">
@@ -90,6 +97,7 @@
         </div>
         
     </div>
+-->
     
     <div class="row">
         

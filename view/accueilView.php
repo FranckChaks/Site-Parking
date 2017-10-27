@@ -21,7 +21,7 @@
                <?php
                     if(isset($_SESSION['connecte'])){
                 ?>
-                <a href="index.php?p=userController&id=<?=$reponse['id_u'];}?>"><img src="css/reserver.png"></a>
+                <a href="<?=BASE_URL;}?>/userController"><img src="css/reserver.png"></a>
             </div>
         </div>
     </div>
