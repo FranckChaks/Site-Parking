@@ -1,4 +1,4 @@
-<button type="button" class="bouton" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-off"></span> Connexion</button>
+<button type="button" class="bouton" data-toggle="modal" data-target="#myModal"> Connexion</button>
        
 <?php
     if(isset($_POST['submit_login']))
