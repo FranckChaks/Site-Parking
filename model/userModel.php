@@ -5,16 +5,20 @@
     {
         global $bdd;
 
-        $req = $bdd->prepare("INSERT INTO occuper(id_u, id_p, date_deb, date_fin, lvl) VALUES (:id_u, (SELECT MIN(id_p) FROM place WHERE id_p NOT IN (SELECT id_p FROM occuper)), :deb, :fin, 0)");
+        $req1 = $bdd->query("CREATE VIEW min_place AS SELECT MIN(id_p) FROM place WHERE id_p NOT INT (SELECT id_p FROM occuper)");
+        
+        $req = $bdd->prepare("INSERT INTO occuper(id_u, id_p, date_deb, date_fin, lvl) VALUES (:id_u, (select * from min_place), :deb, :fin, 0)");
 
         $req->bindValue(":id_u", $id_u, PDO::PARAM_INT);
         $req->bindValue(":deb", $deb, PDO::PARAM_STR);
         $req->bindValue(":fin", $fin, PDO::PARAM_STR);
         $req->execute();
 
+        $req2 = $bdd->query("DROP VIEW min_place");
+        
         return $req->fetch();
     }
-
+// liste des places reserve
     function displayReservedPlace($id_u)
     {
         global $bdd;
@@ -24,7 +28,7 @@
 
         return $req->fetch();
     }
-
+// info utilisateur
     function displayInfo($id_u)
     {
         global $bdd;
@@ -46,7 +50,7 @@
 
         return $req;
     }
-
+// liste des place valide
     function displayPlaceValide($id_u)
     {
         global $bdd;
@@ -57,7 +61,7 @@
 
         return $req;
     }
-
+// liste place refuse
     function displayPlaceDeny($id_u)
     {
         global $bdd;
