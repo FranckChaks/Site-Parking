@@ -54,9 +54,9 @@
    <div class="row">
    <div class="text-middle  col-xs-12 col-md-12">
     <table class="text-middle tableAdmin">
-        <th class="text-middle">Nom / Prenom </th>
-        <th class="text-middle">Email </th>
-        <th class="text-middle">  Action </th>
+        <th class="text-middle col-xs-3 col-md-4">Nom / Prenom </th>
+        <th class="text-middle col-xs-3 col-md-4">Email </th>
+        <th class="text-middle col-xs-3 col-md-4">  Action </th>
         <?php
         foreach($r as $k => $v)
             {
@@ -82,22 +82,37 @@
     </table>
     </div>
     </div>
-<!--
     <div class="row">
         
         <div class="col-xs-12 col-md-12">
             <h1 class="text-middle"><u>Liste des places utilisées</u></h1>
+            
+        <table class="text-middle tableAdmin">
+            <th class="text-middle col-xs-4 col-md-4">Utilisateur </th>
+            <th class="text-middle col-xs-4 col-md-4">Numéro de place </th>
+            <th class="text-middle col-xs-4 col-md-4">  Action </th>
             <?php
-//                $id_u = $_SESSION['id'];
-//                while($reponse = displayAllPlace($id_u))
-//                {
-//                    echo $reponse['nom_p'];
-//                }
+                while($reponse = $usedPlace->fetch())
+                {
             ?>
+                    <tr>
+                       <td class='col-xs-4 col-md-4'>
+                            <?= $reponse['nom']." ".$reponse['prenom'];?>
+                      </td>
+                      <td class='col-xs-4 col-md-4'>
+                            <?= $reponse['nom_p'];?>
+                      </td>
+                      <td class='col-xs-4 col-md-4'>
+                            <a href="<?=BASE_URL;?>/deleteUsedPlace/<?= $reponse['id_p'];?>">Supprimer</a>
+                      </td>
+                    </tr>
+
+               <?php } ?>
+
+            </table>
         </div>
         
     </div>
--->
     
     <div class="row">
         

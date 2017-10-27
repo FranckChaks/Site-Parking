@@ -33,6 +33,8 @@
     }
     
     $req = waitList();
+
+    $usedPlace = displayUsedPlace();
     
     require("view/adminView.php");
 ?>

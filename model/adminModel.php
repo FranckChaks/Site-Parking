@@ -90,6 +90,26 @@
     }
 
 
+    function displayUsedPlace()
+    {
+        global $bdd;
+        
+        $req = $bdd->prepare("SELECT p.id_p, p.nom_p, u.nom, u.prenom FROM occuper o, place p, user u WHERE p.id_p = o.id_p AND o.id_u = u.id_u AND o.lvl > 0");
+        $req->execute();
+        
+        return $req;
+    }
+
+    function deleteUsedPlace($id_p)
+    {
+        global $bdd;
+        
+        $req = $bdd->prepare("DELETE FROM occuper WHERE id_p=".$id_p);
+        
+        $req->execute();
+
+        return $req->fetch();
+    }
 
 
 
