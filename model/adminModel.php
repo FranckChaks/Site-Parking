@@ -50,7 +50,7 @@
     {
         global $bdd;
 
-        $req = $bdd->query("SELECT u.nom, u.prenom, o.lvl, p.nom_p, p.id_p, o.date_deb FROM occuper o, user u, place p WHERE o.lvl = 0 AND o.id_p = p.id_p AND u.id_u = o.id_u");
+        $req = $bdd->query("SELECT u.nom, u.prenom, o.lvl, p.nom_p, p.id_p, o.date_deb FROM occuper o, user u, place p WHERE o.lvl = 0 AND o.id_p = p.id_p AND u.id_u = o.id_u ORDER BY o.timestamp DESC");
 
         return $req;
     }
