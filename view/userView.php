@@ -8,7 +8,6 @@
     </div>
 <!-- ---------------- RESERVATION DE PLACES -------------- -->
 
-
     <div class="row text-middle">
         <div class="col-xs-12 col-md-5 text-middle">
            <div class="user-block">
