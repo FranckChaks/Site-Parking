@@ -16,6 +16,7 @@ if(isset($_SESSION['connecte']))
 
     if(isset($_POST['submit']))
     {
+        
         $deb = $_POST['deb'];
         $fin = $_POST['fin'];
         
@@ -23,7 +24,7 @@ if(isset($_SESSION['connecte']))
         
         var_dump($_POST);
         
-        header("location:index.php?p=userController&id=".$id_u);
+        header("location:".BASE_URL."/userController");
     }
 }
 else
