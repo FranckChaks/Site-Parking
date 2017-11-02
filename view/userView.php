@@ -53,7 +53,7 @@
               ?>
 
             </table>
-            <section><h4><b>Place dans la file d'attente:</b> ...</h4></section>
+<!--            <section><h4><b>Place dans la file d'attente:</b> ...</h4></section>-->
         </div>
         </div>
     </div>

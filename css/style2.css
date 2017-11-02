@@ -264,3 +264,11 @@ td{
     box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7),
             -1px 2px 20px rgba(255, 255, 255, 0.6) inset; 
 }
+
+.img_doc{
+/*    border: 1px solid black;*/
+        box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7),
+            -1px 2px 20px rgba(255, 255, 255, 0.6) inset; 
+    margin-bottom: 10px;
+    
+}

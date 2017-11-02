@@ -84,7 +84,7 @@
     </div>
     <div class="row">
         
-        <div class="col-xs-12 col-md-12">
+        <div class="col-xs-12 col-md-12 text-middle">
             <h1 class="text-middle"><u>Liste des places utilisées</u></h1>
             
         <table class="text-middle tableAdmin">
